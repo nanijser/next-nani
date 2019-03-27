@@ -8,7 +8,9 @@
     "start": "NODE_PATH=. NODE_ENV=production node server.js",
     "precommit": "lint-staged",
     "lint": "eslint ./pages ./components ./layouts",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "pm2:dev": "pm2 start ./pm2.config.json --env dev",
+    "pm2:prod": "pm2 start ./pm2.config.json --env production"
   },
   "repository": {
     "type": "git",
