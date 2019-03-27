@@ -1,0 +1,61 @@
+{
+  "name": "next-nani",
+  "version": "1.0.0",
+  "description": "next start",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_PATH=. NODE_ENV=production node server.js",
+    "precommit": "lint-staged",
+    "lint-staged": "lint-staged"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanijser/next-nani.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nanijser/next-nani/issues"
+  },
+  "homepage": "https://github.com/nanijser/next-nani#readme",
+  "dependencies": {
+    "@zeit/next-css": "^0.2.0",
+    "@zeit/next-less": "^1.0.1",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.11.0",
+    "babel-plugin-styled-components": "^1.10.0",
+    "css-loader": "^0.28.11",
+    "eslint": "^5.15.3",
+    "express": "^4.16.4",
+    "isomorphic-fetch": "^2.2.1",
+    "less": "^3.9.0",
+    "next": "^8.0.3",
+    "next-compose-plugins": "^2.1.1",
+    "next-routes": "^1.4.2",
+    "postcss-loader": "^2.1.5",
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "save": "^2.3.3",
+    "styled-components": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
+    "style-loader": "^0.23.1"
+  },
+  "lint-staged": {
+    "**/*.{js,json,jsx,less}": [
+      "prettier --tab-width 4 --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  }
+}
