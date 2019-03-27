@@ -1,6 +1,7 @@
-import Wrapper from './Wrapper'
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
+import React from "react";
+import Wrapper from "./Wrapper";
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 export default ({ children }) => (
   <Wrapper>
@@ -8,12 +9,8 @@ export default ({ children }) => (
       <Nav />
     </header>
 
-    <main>
-      { children }
-    </main>
+    <main>{children}</main>
 
-    <Footer>
-      Footer
-    </Footer>
+    <Footer>Footer</Footer>
   </Wrapper>
-)
+);

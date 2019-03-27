@@ -4,7 +4,7 @@ import Head from "next/head";
 import { renderLayout } from "../utils/render-layouts";
 import "./_app.less";
 
-class IndexPage extends React.Component {
+class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -32,4 +32,4 @@ class IndexPage extends React.Component {
         );
     }
 }
-export default IndexPage;
+export default App;
