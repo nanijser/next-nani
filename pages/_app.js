@@ -24,7 +24,7 @@ class IndexPage extends React.Component {
     const {
       Component
     } = this.props
-
+    sss = ss + "...";
     return (
       <Container>
         <Head>
