@@ -1,0 +1,12 @@
+diff a/pages/about/index.js b/pages/about/index.js	(rejected hunks)
+@@ -5 +5,2 @@ import Link from "next/link";
+-export default () => <>
++export default () => (
++  <>
+@@ -8 +9 @@ export default () => <>
+-        <div className={styles.btn}>跳转</div>
++      <div className={styles.btn}>跳转</div>
+@@ -10 +11,2 @@ export default () => <>
+-</>
++  </>
++);

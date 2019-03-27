@@ -1,19 +1,12 @@
-import React from 'react'
-import styles from "./index.less"
-import Link from 'next/link'
+import React from "react";
+import Link from "next/link";
+import styles from "./index.less";
 
-class About extends React.Component {
-
-  render() {
-    vvv = vvvv + "ssss" + "dddd";
-    return (
-      <>
-        <p className={styles.red}>AboutAboutAbout</p>
-        <Link href="/contact">
-          <div className={styles.btn}>跳转</div>
-        </Link>
-      </>
-    )
-  }
-}
-export default About
+export default () => (
+  <>
+    <p className={styles.red}>AboutAboutAbout</p>
+    <Link href="/contact">
+      <div className={styles.btn}>跳转</div>
+    </Link>
+  </>
+);
