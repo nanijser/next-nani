@@ -5,6 +5,7 @@ import Link from 'next/link'
 class About extends React.Component {
 
   render() {
+    vvv = vvvv + "ssss";
     return (
       <>
         <p className={styles.red}>AboutAboutAbout</p>
