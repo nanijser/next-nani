@@ -9,7 +9,7 @@
     "precommit": "lint-staged",
     "lint": "eslint ./pages ./components ./layouts",
     "lint-staged": "lint-staged",
-    "pm2:dev": "pm2 start ./pm2.config.json --env dev",
+    "pm2:test": "pm2 start ./pm2.config.json --env test",
     "pm2:prod": "pm2 start ./pm2.config.json --env production"
   },
   "repository": {
@@ -28,7 +28,7 @@
     "babel-eslint": "^10.0.1",
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-styled-components": "^1.10.0",
-    "css-loader": "^0.28.11",
+    "css-loader": "1.0.0",
     "eslint": "^5.15.3",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-compat": "^3.1.0",

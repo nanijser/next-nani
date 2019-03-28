@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "next/app";
-import Head from "next/head";
+import Router from "next/router";
 import { renderLayout } from "../utils/render-layouts";
 import "./_app.less";
 
@@ -19,12 +19,16 @@ class App extends React.Component {
         return { ...pageProps };
     }
 
+    componentDidMount() {
+        Router.beforePopState(sad => {
+            console.log("sad", sad);
+            return true;
+        });
+    }
+
     render() {
         return (
           <Container>
-            <Head>
-              <meta name="keywords" content="...." />
-            </Head>
             <React.Fragment>
               {renderLayout(this.props, this.state)}
             </React.Fragment>

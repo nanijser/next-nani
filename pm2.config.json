@@ -10,8 +10,8 @@
       "env_production": {
          "NODE_ENV": "production"
       },
-      "env_dev": {
-          "NODE_ENV": "development"
+      "env_test": {
+          "NODE_ENV": "test"
       }
     }
   ]
