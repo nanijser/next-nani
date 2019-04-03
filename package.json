@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "export": "next export",
+    "export": "npm run build && next export",
     "start": "NODE_PATH=. NODE_ENV=production node server.js",
     "precommit": "lint-staged",
     "lint": "eslint ./pages ./components ./layouts",
@@ -28,9 +28,11 @@
   "dependencies": {
     "@zeit/next-css": "^0.2.0",
     "@zeit/next-less": "^1.0.1",
+    "@zeit/next-typescript": "^1.1.1",
     "babel-eslint": "^10.0.1",
     "babel-plugin-import": "^1.11.0",
     "babel-plugin-styled-components": "^1.10.0",
+    "core-js": "^3.0.0",
     "css-loader": "1.0.0",
     "eslint": "^5.15.3",
     "eslint-config-airbnb": "^17.1.0",
@@ -45,7 +47,10 @@
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "save": "^2.3.3",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0"
   },
   "devDependencies": {
     "eslint-config-prettier": "^4.1.0",
@@ -62,12 +67,11 @@
     "stylelint-config-standard": "^18.0.0"
   },
   "lint-staged": {
-    "**/*.{js,jsx}": [
+    "**/*.{js,jsx,ts,tsx}": [
       "prettier --tab-width 4 --write",
       "eslint --fix",
       "git add"
     ],
-    "**/*.{js,jsx}": "npm run lint-staged:js",
     "**/*.less": [
       "prettier --tab-width 4 --write",
       "stylelint --syntax less"

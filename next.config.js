@@ -2,6 +2,7 @@
 const withPlugins = require("next-compose-plugins");
 const withCss = require("@zeit/next-css");
 const withLess = require("@zeit/next-less");
+const withTypescript = require("@zeit/next-typescript");
 
 module.exports = withPlugins(
     [
@@ -12,17 +13,26 @@ module.exports = withPlugins(
                 importLoaders: 1,
                 localIdentName: "[local]___[hash:base64:5]"
             }
-        })
+        }),
+        withTypescript
     ],
     {
         assetPrefix: "",
         webpack: config => {
-            // Perform customizations to webpack config
+            const _config = config;
+            const originalEntry = _config.entry;
+            _config.entry = async () => {
+                const entries = await originalEntry();
 
-            // Important: return the modified config
-            // config.resolve.modules = [path.resolve(__dirname, "components"), "node_modules"]
-            // console.log("config...", config);
-            return config;
+                if (
+                    entries["main.js"] &&
+                    !entries["main.js"].includes("./client/polyfills.js")
+                ) {
+                    entries["main.js"].unshift("./client/polyfills.js");
+                }
+                return entries;
+            };
+            return _config;
         },
         webpackDevMiddleware: config => {
             // Perform customizations to webpack dev middleware config
