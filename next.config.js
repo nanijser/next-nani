@@ -21,7 +21,7 @@ module.exports = withPlugins(
 
             // Important: return the modified config
             // config.resolve.modules = [path.resolve(__dirname, "components"), "node_modules"]
-            console.log("config...", config);
+            // console.log("config...", config);
             return config;
         },
         webpackDevMiddleware: config => {

@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
+    "export": "next export",
     "start": "NODE_PATH=. NODE_ENV=production node server.js",
     "precommit": "lint-staged",
     "lint": "eslint ./pages ./components ./layouts",
