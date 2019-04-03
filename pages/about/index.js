@@ -10,7 +10,10 @@ export default () => (
       <meta name="keywords" content="about about about" />
     </Head>
     <p className={styles.red} />
-    <div className={styles.enterBtn} onClick={() => Router.push("/contact")}>
+    <div
+      className={styles.enterBtn}
+      onClick={() => Router.push("/contact")}
+    >
             跳转
     </div>
   </>
