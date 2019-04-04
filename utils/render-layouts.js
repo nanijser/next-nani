@@ -1,11 +1,12 @@
+import React from "react";
 import Layout from "../layouts/Main";
 
-export function renderLayout(props, state) {
-    const { Component } = props;
+export default function renderLayout(props) {
+  const { Component, pageProps } = props;
 
-    return (
-        <Layout>
-            <Component {...props}  />
-        </Layout>
-    );
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
