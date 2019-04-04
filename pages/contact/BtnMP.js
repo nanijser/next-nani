@@ -1,22 +1,19 @@
 import React from "react";
 import { connect } from "react-redux";
-import {
-  increment as incrementAct,
-  decrement as decrementAct
-} from "../../modals/actions";
+import { increment, decrement } from "../../modals/actions";
 import styles from "../about/index.less";
 
 class BtnMP extends React.Component {
   componentDidMount() {}
 
   render() {
-    const { increment, decrement } = this.props;
+    const { incrementFn, decrementFn } = this.props;
     return (
       <>
-        <div className={styles.enterBtn} onClick={() => increment()}>
+        <div className={styles.enterBtn} onClick={() => incrementFn()}>
           +++++++
         </div>
-        <div className={styles.enterBtn} onClick={() => decrement()}>
+        <div className={styles.enterBtn} onClick={() => decrementFn()}>
           -------
         </div>
       </>
@@ -26,7 +23,7 @@ class BtnMP extends React.Component {
 const mapStateToProps = () => {
   return {};
 };
-const mapDispatchToProps = { incrementAct, decrementAct };
+const mapDispatchToProps = { incrementFn: increment, decrementFn: decrement };
 export default connect(
   mapStateToProps,
   mapDispatchToProps
